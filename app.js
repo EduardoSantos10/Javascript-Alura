@@ -1,5 +1,6 @@
 alert('Boas Vindas Rapaziada!'); // passar uma mensagem
-numeroSec = 20;
+let numeroMaximo = 500;
+let numeroSec = parseInt(Math.random() * numeroMaximo);
 console.log(numeroSec);
 
 let chute;
@@ -8,10 +9,10 @@ let tentativas = 1;
 
 // Enquanto
 while(chute != numeroSec){
-    chute = prompt('Escolha um número entre 1 e 30');
+    chute = prompt(`Escolha um número entre 1 e ${numeroMaximo}`);
 
     if(chute == numeroSec){
-        alert(`Isso ai, você descobriu o número secreto, pois ele é: ${numeroSec} com ${tentativas} tentativas`);m // ${} concatenção
+        break;
     }
     else{
         if(chute > numeroSec){
@@ -24,3 +25,12 @@ while(chute != numeroSec){
     }
 }
 
+let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa'
+alert(`Isso ai, você descobriu o número secreto, pois ele é: ${numeroSec} com ${tentativas} ${palavraTentativa}`);m // ${} concatenção
+
+
+if(tentativas > 1){
+    alert(`Isso ai, você descobriu o número secreto, pois ele é: ${numeroSec} com ${tentativas} tentativas`);m // ${} concatenção
+}else{
+    alert(`Isso ai, você descobriu o número secreto, pois ele é: ${numeroSec} com ${tentativas} tentativa`);m // ${} concatenção
+}
